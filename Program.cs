@@ -13,11 +13,22 @@ namespace AdivinaElNumero
             int numeroIngresado, contador = 0;
             Random numeroAle = new Random();
             int aleatorio = numeroAle.Next(1, 51);
+            Console.WriteLine(aleatorio);
 
             do
             {
                 Console.Write("Ingrese el numero a adivinar: ");
-                numeroIngresado = int.Parse(Console.ReadLine());
+                try
+                {
+                    numeroIngresado = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Error: No debe ingresar texto o decimales, solo numeros enteros");
+                    contador++;
+                    continue;
+                }
+                
                 contador++;
 
                 if (numeroIngresado == aleatorio)

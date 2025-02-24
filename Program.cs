@@ -10,7 +10,7 @@ namespace AdivinaElNumero
     {
         static void Main(string[] args)
         {
-            int numeroIngresado;
+            int numeroIngresado, contador = 0;
             Random numeroAle = new Random();
             int aleatorio = numeroAle.Next(1, 51);
 
@@ -18,10 +18,11 @@ namespace AdivinaElNumero
             {
                 Console.Write("Ingrese el numero a adivinar: ");
                 numeroIngresado = int.Parse(Console.ReadLine());
+                contador++;
 
                 if (numeroIngresado == aleatorio)
                 {
-                    Console.WriteLine("Felicidades, Adivinaste el numero");
+                    Console.WriteLine($"Felicidades, Adivinaste el numero y lo lograste en {contador} intentos");
                     break;
                 }
                 else

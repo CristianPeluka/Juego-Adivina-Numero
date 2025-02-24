@@ -13,7 +13,6 @@ namespace AdivinaElNumero
             int numeroIngresado, contador = 0;
             Random numeroAle = new Random();
             int aleatorio = numeroAle.Next(1, 51);
-            Console.WriteLine(aleatorio);
 
             do
             {
